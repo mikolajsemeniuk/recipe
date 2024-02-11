@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Timer Extension",
+    "version": "1.0.0",
+    "description": "Hello World",
+    "action": {
+        "default_title": "Timer Extension Action",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://cookidoo.pl/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
