@@ -2,8 +2,9 @@
   "name": "recipe",
   "version": "1.0.0",
   "description": "some",
+  "main": "index.js",
   "scripts": {
-    "watch": "webpack --config webpack.config.js --watch",
+    "watch": "webpack --config webpack.config.js --watch --progress",
     "build": "webpack --config webpack.config.js",
     "test": "npx jest"
   },

@@ -9,7 +9,7 @@ export const sum = (x: string): Ingredient[] => {
     return [{ value: x, unit: x, ingredient: x }]
 }
 
-
+console.log(sum("x"))
 
 // const recipe = (): string => {
 //     const selector = "h1.recipe-card__title"
