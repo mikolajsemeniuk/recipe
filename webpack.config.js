@@ -2,15 +2,16 @@ const path = require('path');
 const copy = require('copy-webpack-plugin');
 const fs = require('fs');
 
-const srcDir = path.resolve(__dirname, 'src');
-const entries = fs.readdirSync(srcDir).reduce((acc, file) => {
-    // Check if the file is a TypeScript (.ts) file
+const src = path.resolve(__dirname, 'src');
+const reducer = (entries, file) => {
     if (file.endsWith('.ts')) {
-        const name = path.basename(file, '.ts'); // Get name without extension
-        acc[name] = path.resolve(srcDir, file); // Add entry point
+        const name = path.basename(file, '.ts');
+        entries[name] = path.resolve(src, file);
     }
-    return acc;
-}, {});
+
+    return entries;
+}
+const entries = fs.readdirSync(src).reduce(reducer, {});
 
 
 module.exports = {
